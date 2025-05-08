@@ -4,18 +4,20 @@
   "outputDirectory": "build",
   "builds": [
     {
-      "src": "build/server/index.js",
+      "src": "package.json",
       "use": "@vercel/node"
     }
   ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
   "routes": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/build/client/assets/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "build/server/index.js"
+      "dest": "/"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 } 
