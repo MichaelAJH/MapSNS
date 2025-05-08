@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { supabase } from '../lib/supabase';
 import type { Post } from '../lib/supabase';
-import CreatePost from '../components/CreatePost';
-import Comments from '../components/Comments';
+import CreatePost from '../components/createpost';
+import Comments from '../components/comments';
 
 export default function MapRoute() {
   const mapRef = useRef<HTMLDivElement>(null);
